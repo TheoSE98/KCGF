@@ -1,0 +1,594 @@
+/* *********************************************
+:: Written by Theo Hancock 17/12/2022
+********************************************** */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+/* ******************************
+:: CUSTOM PROPERTIES
+****************************** */
+:root {
+    --primary-color: linear-gradient(107deg, rgb(13, 198, 180) 8.1%, rgb(33, 198, 138) 79.5%);
+    --stock-color: rgb(13, 198, 180);
+    --custom-green: rgb(33, 198, 138);
+    --skew-welcome: skewY(-2deg);
+}
+
+/* ******************************
+:: CUSTOM SETTINGS FOR PROJECT
+****************************** */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+
+}
+  
+img {
+    width: 70%;
+}
+
+/* ******************************
+:: Navigation Bar 
+****************************** */
+.navbar {
+    background: var(--primary-color);
+    color: #fff;
+    height: 70px;
+}
+
+/*Display horizontal*/
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px #ffff solid;
+    
+}
+
+/*In flex*/
+.navbar .flex {
+    justify-content: space-between;
+}
+
+.container {
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 10px;
+}
+
+.flex {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* ******************************
+:: Welcome Area 
+****************************** */
+
+/*specifies, as a space-separated track list between two items*/
+.welcome .grid {
+    grid-template-columns: 50% 45%;
+    gap: 130px;
+    padding-left: 50px;
+}
+
+/*height: changes height of welcome area */
+.welcome {
+    height: 600px;
+    background: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.welcome h1 {
+    font-size: 40px;
+}
+
+.welcome p {
+    margin: 20px 0;
+}
+
+.border {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: var(--stock-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px #fff solid;
+}
+
+.btn:hover {
+    transform: scale(0.95);
+}
+
+/* ******************************
+:: Opening Hours -> clean section
+****************************** */
+.openinghours {
+    display: grid;
+    justify-content: center;
+}
+
+.openinghourscontent {
+    float: left;
+}
+
+.section{
+    border-radius:4px;
+    margin-top: 120px;
+    box-shadow: 0 0 10px black;
+    overflow: hidden;
+    display: inline-block;
+    background: var(--primary-color);
+    align-items: center;
+    padding: 0 20px 0 20px;
+}
+
+.openinghourscontent h2 {
+    display:block;
+    text-align:center;
+    margin-top:.33em;
+}
+
+.today {
+    color: #8AC007;
+}
+
+.opening-hours-table tr td:first-child {
+    font-weight:bold;    
+}
+
+#open-status {
+    display:block;
+    margin-top:-1em;
+    text-align:center;
+}
+
+.openorclosed {
+    color: #ffff;
+}
+
+.openorclosed:after {
+    content:" open during these hours";
+}
+
+.open {
+    color:green;
+}
+.open:after {
+    content:" Open";
+    color: #6C0;
+}
+
+.closed:after {
+    content:" Closed";
+    color: red;
+}
+.opening-hours-table tr td {
+    padding: 10px;
+    color: #ffff;
+}
+
+.bold-opening{
+    color: #ffff;
+}
+
+/*CURRENT TESTING AREA FOR BUTTON*/
+.box-3 { 
+    background: var(--primary-color); 
+}
+
+.btn3 {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 300px;
+  cursor: pointer;
+}
+
+div[class*=box] {
+
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn-three {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+  }
+
+.btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+
+.btn-three:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+}
+
+.btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+}
+
+.btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+}
+
+.disclaimer-text {
+    margin-top: 15px;
+    color: red;
+    font-size: 13px;
+}
+
+/* ******************************
+:: Description
+****************************** */
+.description {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background: var(--primary-color); 
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.description-heading {
+    margin: auto;
+    
+}
+
+.description .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* ******************************
+:: Southern Forest Member
+****************************** */
+.southern .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+.btn-sf {
+    border: 1px #000 solid;
+    transform: scale(0.98);
+    background: var(--stock-color); 
+
+    font-weight: bold;
+}
+
+.sf-img {
+    width: 80%;
+}
+
+/* ******************************
+:: Footer
+****************************** */
+.bg-primary {
+    background: var(--stock-color);
+    color: #fff;
+}
+
+.bg-primary a {
+    color: #fff;
+}
+
+.footer .socials a {
+    margin: 10px;
+}
+
+.footer .grid p {
+    font-size: 14px;
+}
+
+.footer .grid ul {
+  text-align: center;
+}
+
+.ani-jump {
+    margin: 10px;
+}
+
+.socials .ani-jump {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: all 0.225s ease-in-out;
+}
+
+.ani-jump:hover {
+    transform: translateY(-10px);
+}
+
+/* ******************************
+:: Tablets and under - changes wont be shown until you add new sections here FUTURE THEO
+****************************** */
+@media(max-width: 790px) {
+    .grid,
+    .welcome .grid,
+    .openinghours .section,
+    .description .grid,
+    .southern .grid, 
+    .stock-welcome .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .navbar .container .fa-solid {
+        display: none;
+    }
+
+    .welcome {
+        height: auto;
+    }
+    
+    .welcome-text {
+        text-align: center;
+    }
+
+    .karri-welcome {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .karri-welcome .border {
+        width: 50%;
+    }
+
+    .southern {
+        height: auto;
+    }
+
+    .southern-img {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .southern-img .sf-img {
+        width: 50%;
+    }
+
+    .footer .text-centered {
+        text-align: center;
+    }
+
+    .footer ul li {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    /* STOCK AREA */
+    .sw-center {
+        text-align: center;
+    }
+    
+}
+
+/* ******************************
+:: Mobile
+****************************** */
+@media(max-width: 500px) {
+    .navbar{
+        height: 150px;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    .footer ul li {
+        display: inline-block;
+        padding: 10px;
+    }
+}
+
+/* ******************************
+:: STOCK PAGE
+****************************** */
+
+/* ******************************
+:: STOCK WELCOME AREA
+****************************** */
+.stock-welcome h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.stock-welcome p {
+    font-size: 25px;
+    text-align: center;
+}
+
+.sw-center {
+    text-align: center;
+}
+
+.sw-img {
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+
+/* ******************************
+:: STOCK CARD  AREA 
+****************************** */
+.stock .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: all 0.225s ease-in-out;
+}
+
+.stock h2 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.stock .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+    
+}
+
+.card:hover {
+    transform: translateY(-15px);
+}
+
+.stock {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    background: var(--primary-color); 
+}
+
+/* ******************************
+:: DISCLAIMER AREA  
+****************************** */
+
+.disclaimer .grid {
+    gap: 150px;
+}
+.disclaimer .other-text h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.text-center .other-text {
+    font-weight: bold;
+}
+
+.disclaimer p {
+    font-size: 20px;
+}
+
+.card-disclaimer p {
+    font-size: 20px;
+}
+
+.card-disclaimer {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 10px;
+}
+
+.card-disclaimer .title-text {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+/* ******************************
+:: CONTACTS AREA   
+****************************** */
+
+.contacts {
+    background-image: url(../contact-images/welcome-map.png);
+}
